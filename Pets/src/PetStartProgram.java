@@ -69,7 +69,7 @@ public class PetStartProgram
 		if (searchBy == 1) 
 		{
 			// Ask the user for the pet's type.
-			System.out.print("Enter the pet's type: ");
+			System.out.print("\nEnter the pet's type: ");
 			String petType = in.nextLine();
 			// Send the user's choice to the method in PetListHelper to search for the type given.
 			foundItems = plh.searchForItemByType(petType);
@@ -78,7 +78,7 @@ public class PetStartProgram
 		else if (searchBy == 2)
 		{
 			// Ask the user for the pet's owner.
-			System.out.print("Enter the pet's owner: ");
+			System.out.print("\nEnter the pet's owner: ");
 			String petOwner = in.nextLine();
 			// Send the user's choice to the method in PetListHelper to search for the owner given.
 			foundItems = plh.searchForItemByOwner(petOwner);
@@ -87,7 +87,7 @@ public class PetStartProgram
 		else if (searchBy == 3)
 		{
 			// Ask the user for the pet's name.
-			System.out.print("Enter the pet's name: ");
+			System.out.print("\nEnter the pet's name: ");
 			String petName = in.nextLine();
 			// Send the user's choice to the method in PetListHelper to search for the name given.
 			foundItems = plh.searchForItemByName(petName);
@@ -97,20 +97,20 @@ public class PetStartProgram
 		if (!foundItems.isEmpty()) 
 		{
 			// Print out the information found.
-			System.out.println("Found Results.");
+			System.out.println("\nFound Results.");
 			for (PetList petli : foundItems) 
 			{
 				System.out.println(petli.getPetID() + " : " + petli.returnPetDetails());
 			}
 			
 			// Ask the user which ID is the correct pet.
-			System.out.print("Which ID to edit: ");
+			System.out.print("\nWhich ID to edit: ");
 			int idToChange = in.nextInt();
 			// Send the ID given to the search.
 			PetList petToChange = plh.searchForItemByPetID(idToChange);
 			
 			// Print out the specific pet's information and ask the user what they want to update.
-			System.out.println("Retrieved Pet: Type - " + petToChange.getType() + " | Owner - " + petToChange.getOwner() + "| Name - " + petToChange.getName());
+			System.out.println("\nRetrieved Pet: Type - " + petToChange.getType() + " | Owner - " + petToChange.getOwner() + "| Name - " + petToChange.getName());
 			System.out.println("1 - Update pet's type");
 			System.out.println("2 - Update pet's owner");
 			System.out.println("3 - Update pet's name");
